@@ -1,0 +1,26 @@
+#Bot Template By De'Mondre Z
+from selenium import webdriver 
+from time import sleep
+ class SelfBot():
+
+    def __init__(self):
+        self driver = webdriver.Chrome()
+        
+    def startPage(self):
+       
+         self.driver.get('https://www.duckduckgo.com/')   # Goes to website
+         sleep(4)
+         Searchbar = self.driver.find_element_by_xpath('//*[@id="search_form_input_homepage"]') # grabs the search bar
+         Searchbar.click() # Clicks search bar
+         
+         #Switches to base window
+         
+         base_window = self.driver.windows_handles[0]
+         self.driver.switch_to_window(self.driver.window_handles[1])
+         
+         #For inputing text into fields
+         textin = self.driver.find_element_by_xpath('') # Grabs text field
+         textin.send_keys(Txt1) # the text thats being inputted
+         
+bot = SelfBot()
+bot.startPage()
